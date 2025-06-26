@@ -28,7 +28,7 @@ def distancia_manhattan(punto1, punto2):
 def cargar_archivo(nombre_archivo):
 
     try:
-        # Preguntar si el archivo tiene encabezados
+
         print("\n¿Su archivo CSV tiene encabezados (nombres de columnas en la primera fila)?")
         print("1. Sí, tiene encabezados")
         print("2. No, no tiene encabezados")
@@ -157,7 +157,6 @@ def clasificar_knn(punto_test, X_train, y_train, k=3, tipo_distancia='euclidiana
     for j in range(min(10, len(distancias))):
         print(f"  {j}: dist={distancias[j][0]:.4f}, clase={distancias[j][1]}, idx={distancias[j][2]}")
 
-    # Ordenar por distancia y tomar los k más cercanos
     distancias.sort(key=lambda x: x[0])
     k_vecinos = distancias[:k]
 
@@ -171,7 +170,6 @@ def clasificar_knn(punto_test, X_train, y_train, k=3, tipo_distancia='euclidiana
     clase_predicha = contador.most_common(1)[0][0]
 
     return clase_predicha, k_vecinos
-
 
 def ingresar_punto_manual():
     print("\n" + "=" * 50)
